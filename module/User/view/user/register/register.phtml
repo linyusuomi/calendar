@@ -1,0 +1,73 @@
+<div class="register-form form-horizontal" id="signup">
+    <h2>Register</h2>
+    <?php
+    $form = $this->form;
+    $form->setAttribute('action', $this->url('register', array('action' => 'register')));
+    $form->prepare();
+    echo $this->form()->openTag($form);
+    echo $this->formHidden($form->get('id'));
+    ?>
+
+    <div class="control-group">
+        <label class="control-label">First Name</label>
+        <div class="controls">
+            <div class="input-prepend">
+                <span class="add-on"><i class="icon-user"></i></span>
+                <?php echo $this->formRow($form->get('firstname')); ?>
+            </div>
+        </div>
+    </div>
+    <div class="control-group">
+        <label class="control-label">Last Name</label>
+        <div class="controls">
+            <div class="input-prepend">
+                <span class="add-on"><i class="icon-user"></i></span>
+                <?php echo $this->formRow($form->get('lastname')); ?>
+            </div>
+        </div>
+    </div>
+    <div class="control-group">
+        <label class="control-label">Email</label>
+        <div class="controls">
+            <div class="input-prepend">
+                <span class="add-on"><i class="icon-envelope"></i></span>
+                <?php echo $this->formRow($form->get('username')); ?>
+            </div>
+        </div>
+    </div>
+    <label class="control-label">Gender</label>
+    <div class="controls">
+        <p>
+        <div class="btn-group" data-toggle="buttons-radio"> 
+            <button type="button" required="required" name="gender" value="0" id="gender" class="btn btn-info" >Male</button>
+            <button type="button" required="required" name="gender" value="1" id="gender" class="btn btn-info" >Female</button>
+        </div>
+        </p>
+    </div>
+    <div class="control-group">
+        <label class="control-label">Password</label>
+        <div class="controls">
+            <div class="input-prepend">
+                <span class="add-on"><i class="icon-lock"></i></span>
+                <?php echo $this->formRow($form->get('password')); ?>
+            </div>
+        </div>
+    </div>
+    <div class="control-group">
+        <label class="control-label">Confirm Password</label>
+        <div class="controls">
+            <div class="input-prepend">
+                <span class="add-on"><i class="icon-lock"></i></span>
+                <?php echo $this->formRow($form->get('conpasswd')); ?>
+            </div>
+        </div>
+    </div>
+    <div class="control-group">
+        <label class="control-label"></label>
+        <div class="controls">
+           <?php echo $this->formSubmit($form->get('submit')); ?>	       
+        </div>
+    </div>
+    
+    <?php echo $this->form()->closeTag(); ?>
+</div>
